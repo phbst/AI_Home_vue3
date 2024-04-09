@@ -1,22 +1,20 @@
 <template>
-   
-        
-  <Person/>
-
-  
+  <Login/>
 </template>
 
-<script lang="ts">
-import Person from './components/Person.vue'
-export default{
-  name:'App',//组件名
-  components:{Person}//注册组件
-}
+<script lang='ts' setup name='App'>
+//导入
+import { reactive,ref,toRefs,onBeforeMount,onMounted} from 'vue'
+import Login from './pages/Login.vue';
+import Home from './pages/Home.vue';
+//数据
+
+
+//方法
 
 
 </script>
 
-<style>
-
+<style scoped>
 
 </style>
