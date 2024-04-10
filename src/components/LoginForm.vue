@@ -23,7 +23,7 @@
             <el-checkbox v-model="checked" label="已阅读并同意AI HOME 服务条款 和 隐私政策" size="large" style="float: left; margin-bottom: 10px;" />
         </div>
         <el-button type="danger" style="margin-bottom: 20px;;margin: 0 0 20px;" round @click="login">Login</el-button>
-
+        
         <!-- <el-button type="danger" style="margin-bottom: 20px;margin: 0 0 20px;" round>Sign Up</el-button> -->
 
     </div>
@@ -60,7 +60,7 @@ function checkusername(data:any) {
 function checkpassword(data:any) {
   const isAlphanumeric = /^[a-zA-Z0-9]*$/.test(data)
   const isLongEnough = data.length >= 8;
-  console.log(isAlphanumeric,isLongEnough)
+
   if(isAlphanumeric&&isLongEnough){
     passwordtip.value=false
   }
@@ -73,19 +73,10 @@ function login() {
     checkpassword(password.value)
     checkusername(username.value)
     console.log('调用login方法')
-    const open = () => {
-        ElMessageBox.alert('This is a message', 'Title', {
-            // if you want to disable its autofocus
-            // autofocus: false,
-            confirmButtonText: 'OK',
-            callback: (action: Action) => {
-                ElMessage({
-                    type: 'info',
-                    message: `action: ${action}`,
-                })
-            },
-        })
+    if(!usernametip.value&&!passwordtip.value){
+      window.location.href = "/home";
     }
+    
 }
 
 

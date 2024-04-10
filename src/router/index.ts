@@ -1,19 +1,24 @@
 import { createRouter,createMemoryHistory } from "vue-router";
-import Home from "@/pages/Home.vue";
-import Login from "@/pages/Login.vue";
-
+import Blogs from "@/pages/Blogs.vue";
+import Chat from "@/pages/Chat.vue";
+import Projects from "@/pages/Projects.vue";
 const router=createRouter({
     history:createMemoryHistory(),
     routes:[
         {
-            name:'login',
-            path:'/login',
-            component:Login
+            name:'blogs',
+            path:'/blogs',
+            component:Blogs
         },
         {
-            name:'home',
-            path:'/home',
-            component:Home
+            name:'chat',
+            path:'/chat',
+            component:Chat
+        },
+        {
+            name:'projects',
+            path:'/projects',
+            component:Projects
         }
     ]
 })
