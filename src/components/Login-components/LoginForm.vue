@@ -35,14 +35,14 @@ import { reactive, ref, toRefs, onBeforeMount, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import type { Action } from 'element-plus'
 import type { RefSymbol } from '@vue/reactivity';
-
+import { useRouter } from 'vue-router';
 //数据
 let username = ref('')
 let password = ref('')
 
 let usernametip = ref(false)
 let passwordtip = ref(false)
-
+const router = useRouter()
 let checked = ref(false)
 //方法
 function checkusername(data:any) {
@@ -70,12 +70,14 @@ function checkpassword(data:any) {
 }
 
 function login() {
-    checkpassword(password.value)
-    checkusername(username.value)
-    console.log('调用login方法')
-    if(!usernametip.value&&!passwordtip.value){
-      window.location.href = "/home";
-    }
+  
+  router.push({ name: 'start2' }) 
+    // checkpassword(password.value)
+    // checkusername(username.value)
+    // console.log('调用login方法')
+    // if(!usernametip.value&&!passwordtip.value){
+    //   window.location.href = "/home";
+    // }
     
 }
 

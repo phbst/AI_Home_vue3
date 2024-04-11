@@ -1,6 +1,7 @@
 <template>
     <div class="header">
-        <el-image  src="../../static/pictures/login-web-logo.png" fit="fill" />
+        <el-image src="/images/weblogo.png" fit="fill" loading="lazy"/>
+
         <div class="art-font">
             PHB的AI小站    
         </div>

@@ -1,5 +1,5 @@
 <template>
-<h2>chat</h2>
+    <h2>Chat</h2>
 </template>
 
 <script lang='ts' setup name='Chat'>

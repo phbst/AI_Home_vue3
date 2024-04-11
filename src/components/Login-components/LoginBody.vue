@@ -2,7 +2,7 @@
     <div class="body">
         <el-card class="card" shadow="always">
             <div>
-                <el-image style="width: 240px; height: 60px ; margin-bottom: 20px;" src="../../static/pictures/login-form-logo.png" fit="fill" />
+                <el-image style="width: 240px; height: 60px ; margin-bottom: 20px;" src="/images/login-form-logo.png" fit="fill" />
             </div>
             
             <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">

@@ -7,21 +7,29 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Aside: typeof import('./src/components/Home-components/Aside.vue')['default']
+    ElAside: typeof import('element-plus/es')['ElAside']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElDivider: typeof import('element-plus/es')['ElDivider']
+    ElFooter: typeof import('element-plus/es')['ElFooter']
     ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElImage: typeof import('element-plus/es')['ElImage']
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
+    ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
-    LoginBody: typeof import('./src/components/LoginBody.vue')['default']
-    LoginForm: typeof import('./src/components/LoginForm.vue')['default']
-    LoginHeader: typeof import('./src/components/LoginHeader.vue')['default']
+    LoginBody: typeof import('./src/components/Login-components/LoginBody.vue')['default']
+    LoginForm: typeof import('./src/components/Login-components/LoginForm.vue')['default']
+    LoginHeader: typeof import('./src/components/Login-components/LoginHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SignUpFrom: typeof import('./src/components/SignUpFrom.vue')['default']
+    SignUpFrom: typeof import('./src/components/Login-components/SignUpFrom.vue')['default']
   }
 }

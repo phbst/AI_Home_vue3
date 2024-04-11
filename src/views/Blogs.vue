@@ -1,8 +1,8 @@
 <template>
-<h2>projects</h2>
+    <h2>Blogs</h2>
 </template>
 
-<script lang='ts' setup name='Projects'>
+<script lang='ts' setup name='Blogs'>
 //导入
 import { reactive,ref,toRefs,onBeforeMount,onMounted} from 'vue'
 
