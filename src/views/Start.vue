@@ -2,7 +2,7 @@
     <el-container class="main">
 
         <el-header>
-            <el-input v-model="search" style="width: 700px; margin-right: 300px;margin-bottom: 10px;" size="large" placeholder="Search the Blogs、Projects、Helps"
+            <el-input v-model="search" style="width: 700px; margin-right: 450px;margin-bottom: 10px;" size="large" placeholder="Search the Blogs、Projects、Helps"
                 :prefix-icon="Search" />
 
             <el-icon >
