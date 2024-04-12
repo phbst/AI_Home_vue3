@@ -46,7 +46,7 @@
         <div style="height: 180px;">
 
         </div>
-        <el-button type="primary" round @click="logout">退出登录(Logout)</el-button>
+        <el-button type="primary" round @click="logout" class="logout-button">退出登录(Logout)</el-button>
             
 
     </div>
@@ -122,5 +122,11 @@ p {
   a{
     text-decoration: none;
     color: grey;
+  }
+  .logout-button{
+    background-color: #6e6ee3;
+  }
+  .logout-button:hover{
+    background-color: #5d5cde;
   }
 </style>
