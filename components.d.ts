@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Aside: typeof import('./src/components/Home-components/Aside.vue')['default']
+    Chatskeleton: typeof import('./src/components/Home-components/Chatskeleton.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -39,6 +40,8 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Showcards: typeof import('./src/components/Home-components/Showcards.vue')['default']
     SignUpFrom: typeof import('./src/components/Login-components/SignUpFrom.vue')['default']
+    Smallcard: typeof import('./src/components/Home-components/Smallcard.vue')['default']
+    SmallcardSkeleton: typeof import('./src/components/Home-components/SmallcardSkeleton.vue')['default']
     Startskeleton: typeof import('./src/components/Home-components/Startskeleton.vue')['default']
   }
 }

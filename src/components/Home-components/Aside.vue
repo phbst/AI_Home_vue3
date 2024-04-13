@@ -17,18 +17,18 @@
 
             <el-menu-item index="1">
                 <el-icon><HomeFilled /></el-icon>
-                <template #title ><RouterLink to="/home/start"><strong>首页(Home)</strong></RouterLink></template>
+                <template #title ><RouterLink to="/home/start"><strong>首 页(Home)</strong></RouterLink></template>
                 
             </el-menu-item>
 
             <el-menu-item index="2">
                 <el-icon><Comment /></el-icon>
-                <template #title ><RouterLink to="/home/chat"><strong>工具(AI tools)</strong></RouterLink></template>
+                <template #title ><RouterLink to="/home/chat"><strong>AI工具(AI tools)</strong></RouterLink></template>
             </el-menu-item>
 
             <el-menu-item index="3">
                 <el-icon><Management /></el-icon>
-                <template #title><RouterLink to="/home/blogs"><strong>博客(blogs)</strong></RouterLink></template>
+                <template #title><RouterLink to="/home/blogs"><strong>技术博客(blogs)</strong></RouterLink></template>
             </el-menu-item>
 
             <el-menu-item index="4">

@@ -165,7 +165,7 @@ const fetchData = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('加载的数据');
-    }, 1000); // 假设请求需要2秒钟
+    }, 500); // 假设请求需要2秒钟
   });
 };
 

@@ -9,6 +9,15 @@ import Chat from "@/views/Chat.vue";
 import Start from "@/views/Start.vue";
 import Projects from "@/views/Projects.vue";
 
+import ChatNavigation from "@/views/ChatNavigation.vue";
+import Chatgpt from "@/views/Chatgpt.vue";
+import KImi from "@/views/KImi.vue";
+import GLM4 from "@/views/GLM4.vue";
+import CogView from "@/views/CogView.vue";
+
+
+
+
 const router=createRouter({
     history:createWebHashHistory(),
     routes:[
@@ -40,7 +49,39 @@ const router=createRouter({
                {
                 name:'chat',
                 path:'chat',
-                component:Chat
+                component:Chat,
+                children:[
+                    {
+                        name:'chatnavigation2',
+                        path:'chatnavigation',
+                        component:ChatNavigation
+                    },
+                    {
+                        name:'chatgpt',
+                        path:'chatgpt',
+                        component:Chatgpt
+                    },
+                    {
+                        name:'kimi',
+                        path:'kimi',
+                        component:KImi
+                    },
+                    {
+                        name:'glm4',
+                        path:'glm4',
+                        component:GLM4
+                    },
+                    {
+                        name:'cogview',
+                        path:'cogview',
+                        component:CogView
+                    },
+                    {
+                        name:'chatnavigation1',
+                        path:'',
+                        component:ChatNavigation
+                    },
+                ]
                },
                {
                 name:'start2',
@@ -52,6 +93,7 @@ const router=createRouter({
                 path:'blogs',
                 component:Blogs
                },
+
         ]
        },
 
