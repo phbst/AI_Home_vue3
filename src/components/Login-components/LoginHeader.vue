@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <el-image src="/images/weblogo.png" fit="fill" loading="lazy"/>
+        <el-image src="/images/weblogo.png" fit="fill" :lazy="true" />
 
         <div class="art-font">
             PHB的AI小站    

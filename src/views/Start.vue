@@ -2,24 +2,18 @@
     <el-container class="main">
 
         <el-header>
-            <el-input v-model="search" style="width: 700px; margin-right: 450px;margin-bottom: 10px;" size="large" placeholder="Search the Blogs、Projects、Helps"
-                :prefix-icon="Search" />
-
-            <el-icon >
-                <Bell  />
+            <el-input v-model="search" style="width: 60%; margin-right: 20%;margin-bottom: 10px;" size="large"
+                placeholder="Search the Blogs、Projects、Helps" :prefix-icon="Search" />
+            <el-icon>
+                <Bell />
             </el-icon>
             <el-icon>
                 <Setting />
             </el-icon>
-            <el-button type="primary" round @click="upgrade_vip"  class="upgrade-button">Upgrade Plan</el-button>
+            <el-button type="primary" round @click="upgrade_vip" class="upgrade-button">Upgrade Plan</el-button>
         </el-header>
         <el-main>
-
-           
-                
-
-                <Showcards/>
-
+            <Showcards />
         </el-main>
         <!-- <el-footer>Footer</el-footer> -->
     </el-container>
@@ -69,7 +63,7 @@ function upgrade_vip() {
     text-align: center;
     padding-left: 50px;
     padding-right: 50px;
-    
+
 }
 
 
@@ -77,19 +71,24 @@ function upgrade_vip() {
 :deep(.el-input__wrapper) {
     border-radius: 20px;
 }
-.el-icon{
+
+.el-icon {
     padding-left: 20px;
-   padding-right:20x;
-   font-size: 20px;
-   padding-top: 10px;
-    
+    padding-right: 20x;
+    font-size: 20px;
+    padding-top: 10px;
+
 }
-.upgrade-button{
-    margin-left: 25px;
+
+.upgrade-button {
+    margin-bottom: 10px;
+    margin-left: 2%;
     background-color: #6e6ee3;
 }
-.upgrade-button:hover{
-    margin-left: 25px;
+
+.upgrade-button:hover {
+    margin-bottom: 10px;
+    margin-left: 2%;
     background-color: #5d5cde;
 }
 </style>

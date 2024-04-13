@@ -1,6 +1,6 @@
 
 import { createRouter,createMemoryHistory } from "vue-router";
-import { createWebHistory } from "vue-router";
+import { createWebHistory ,createWebHashHistory} from "vue-router";
 import Login from "@/pages/Login.vue";
 import Home from "@/pages/Home.vue";
 
@@ -10,7 +10,7 @@ import Start from "@/views/Start.vue";
 import Projects from "@/views/Projects.vue";
 
 const router=createRouter({
-    history:createWebHistory(),
+    history:createWebHashHistory(),
     routes:[
         {
             name:'login1',

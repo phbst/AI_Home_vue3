@@ -1,6 +1,6 @@
 <template>
     <div class="body">
-        <el-avatar :size="75" shape='circle' :src=imageurl  style="margin-top: 45px;margin-bottom: 20px;"/>
+        <el-avatar :size="75" shape='circle' :src=imageurl  style="margin-top: 45px;margin-bottom: 20px;" :lazy="true"/>
         
         <div class="info">
             <strong>Lyubov Kurach</strong>
@@ -43,9 +43,7 @@
         <el-divider>
             <el-icon><star-filled /></el-icon>
         </el-divider>
-        <div style="height: 180px;">
-
-        </div>
+        
         <el-button type="primary" round @click="logout" class="logout-button">退出登录(Logout)</el-button>
             
 
@@ -94,6 +92,8 @@ function logout(){
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    
 }
 
 .el-avatar {
@@ -125,6 +125,7 @@ p {
   }
   .logout-button{
     background-color: #6e6ee3;
+    margin-top: 100px;
   }
   .logout-button:hover{
     background-color: #5d5cde;

@@ -28,6 +28,8 @@ declare module 'vue' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
+    ElSkeletonItem: typeof import('element-plus/es')['ElSkeletonItem']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     LoginBody: typeof import('./src/components/Login-components/LoginBody.vue')['default']
@@ -37,5 +39,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Showcards: typeof import('./src/components/Home-components/Showcards.vue')['default']
     SignUpFrom: typeof import('./src/components/Login-components/SignUpFrom.vue')['default']
+    Startskeleton: typeof import('./src/components/Home-components/Startskeleton.vue')['default']
   }
 }

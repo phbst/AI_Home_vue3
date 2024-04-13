@@ -2,7 +2,7 @@
     <div class="body">
         <el-card class="card" shadow="always">
             <div>
-                <el-image style="width: 240px; height: 60px ; margin-bottom: 20px;" src="/images/login-form-logo.png" fit="fill" />
+                <el-image style="width: 240px; height: 60px ; margin-bottom: 20px;" src="/images/login-form-logo.png" fit="fill" :lazy="true"/>
             </div>
             
             <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
@@ -51,7 +51,7 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
     /*半透明白色背景，0.8是透明度 */
     width: 440px;
     height: 560px;
-    margin-left: 840px;
+    margin-left: 60%;
     box-shadow: 0 0 20px;
     border-radius: 20px;
     padding-top: 20px;
