@@ -3,7 +3,7 @@
     <el-scrollbar v-else>
         <div class="movedcards">
             <el-carousel :interval="4000" type="card" height="250px">
-                <el-carousel-item v-for="(item, index) in movecardsimages" :key="index">
+                <el-carousel-item v-for="(item, index) in startstore.movecardsimages" :key="index">
                     <!-- <el-image :src="item" fit="cover"/> -->
                     <img :src="item" style="height: 100%;width: 100%;" />
                 </el-carousel-item>
@@ -14,8 +14,8 @@
             <el-card style="width: 55%;margin-right: 20px; border-radius: 10px;display: flex;flex-direction: column;">
                 <h4>Popular websize</h4>
                 <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
-                    <div v-for="(web, index) in weblist" :key="index">
-                        <el-link @click="gotonewweb(web.url)"
+                    <div v-for="(web, index) in startstore.weblist" :key="index">
+                        <el-link @click="startstore.gotonewweb(web.url)"
                             style="font-size:20px;margin-right: 15px;margin-bottom: 20px;">
                             <el-avatar size="small" :src="web.image" />
                             <span style="display: inline-block; width: 150px; margin-left: 10px; ">{{ web.name }}</span>
@@ -28,8 +28,8 @@
             <el-card style="width: 25%;margin-right: 20px;border-radius: 10px;display: flex;flex-direction: column;">
                 <h4>Popular Language Model</h4>
                 <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
-                    <div v-for="(model, index) in modellist" :key="index">
-                        <el-link @click="gotonewweb(model.url)"
+                    <div v-for="(model, index) in startstore.modellist" :key="index">
+                        <el-link @click="startstore.gotonewweb(model.url)"
                             style="font-size:20px;margin-right: 50px;margin-bottom: 20px;">
                             <el-avatar size="small" :src="model.image" />
                             <span style="display: inline-block; width: 200px;  text-align: center;">{{ model.name }}</span>
@@ -72,90 +72,15 @@
 //导入
 import { reactive, ref, toRefs, onBeforeMount, onMounted } from 'vue'
 import Startskeleton from './Startskeleton.vue';
+import { useStartlinklistStore } from '@/store/useStartlinklistStore';
 
 //数据
+let startstore=useStartlinklistStore()
 let loading=ref(true)
-let weblist = reactive([
-    {
 
-        name: 'Hugging Face',
-        url: 'https://huggingface.co/',
-        image: '/images/huggingface_logo-noborder.svg'
-    },
-    {
-
-        name: 'Github',
-        url: 'https://github.com/',
-        image: '/images/github.png'
-    },
-    {
-
-        name: 'ChatGPT',
-        url: 'https://chat.openai.com/',
-        image: '/images/chatgpt.png'
-    },
-    {
-
-        name: 'Kimi AI',
-        url: 'https://kimi.moonshot.cn/',
-        image: '/images/kimi.png'
-    },
-    {
-        name: '机器之心SOTA',
-        url: 'https://sota.jiqizhixin.com/',
-        image: '/images/qiji.png'
-    },
-    {
-        name: 'AutoDL算力云',
-        url: 'https://www.autodl.com/home',
-        image: '/images/autodl.png'
-    },
-    {
-        name: '迈速云',
-        url: 'https://www.maisuyun.com/clientarea',
-        image: '/images/maisu.png'
-    },
-    {
-        name: 'FastLink',
-        url: 'https://v2.fastlink-aff02.com/user#',
-        image: '/images/fastlink.png'
-    }
-])
-let modellist = reactive([
-    {
-        name: 'Llama2 Chat 6B',
-        url: 'https://llama.meta.com/llama2/',
-        image: '/images/llama.webp'
-    },
-    {
-        name: 'ChatGLM3-6B',
-        url: 'https://huggingface.co/THUDM/chatglm3-6b',
-        image: '/images/zhipu.png'
-    },
-    {
-        name: 'whisper-large-v2',
-        url: 'https://huggingface.co/openai/whisper-large-v2',
-        image: '/images/whisper-large-v2.png'
-    },
-    {
-        name: 'GPT-SoVITS',
-        url: 'https://github.com/RVC-Boss/GPT-SoVITS',
-        image: '/images/sovits.png'
-    }
-])
-//200x598
-let movecardsimages = reactive([
-
-    '/images/movecard13.jpg',
-    '/images/movecard15.webp',
-    '/images/movecard6.jpg',
-    '/images/movecard9.png',
-    '/images/movecard12.webp',
-    '/images/movecard14.png',
-
-])
 //方法
 onMounted(() => {
+
   fetchData().then(() => {
     loading.value = false; 
   });
@@ -169,9 +94,7 @@ const fetchData = () => {
   });
 };
 
-function gotonewweb(url: string) {
-    window.open(url);
-}
+
 </script>
 
 <style scoped>
