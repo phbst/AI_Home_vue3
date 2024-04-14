@@ -3,7 +3,7 @@
     <el-container class="body">
         <div class="header">
             <el-image :src="modelimage"
-                style="border-radius: 10px;width: 40px;height: 40px; margin-right: 5px;margin-left: 20px;" />
+                style="border-radius: 10px;width: 40px;height: 40px; margin-right: 5px;margin-left: 40px;" />
             <strong>ChatGPT-3.5</strong>
             <el-button type="primary" round @click="cheakhistory" class="cheakhistory-button"><el-icon
                     style="margin-right: 5px;">
@@ -11,10 +11,29 @@
                 </el-icon>历史会话</el-button>
 
         </div>
-        <div class="main">Main</div>
+        <div class="main">
+            <div style="width: 270px;" />
+            <div class="message-content">
+                <Advance :info="advance" v-if="!messagelist.length" />
+                <div v-else>
+                    message
+                </div>
+            </div>
+            <div style="width: 270px;" />
+        </div>
         <div class="footer">
-            <el-input v-model="input" style="width: 600px;height: 40px;font-size: 17px;border: 0 ;border: none;"
-                :autosize="{ minRows: 1, maxRows: 2 }" type="textarea" placeholder="Please input" />
+            <el-button circle round @click="clearmessages" size="large">
+                <el-icon size="30">
+                    <DeleteFilled />
+                </el-icon></el-button>
+            <div class="chatinput">
+                <textarea class="area" placeholder="Enter 发送; Shift + Enter 换行" v-model="input"></textarea>
+            </div>
+            <el-button circle round @click="sendtochatgpt" size="large">
+                <el-icon size="30">
+                    <Promotion />
+                </el-icon></el-button>
+
         </div>
     </el-container>
 
@@ -23,16 +42,49 @@
 <script lang='ts' setup name='chatgpt'>
 //导入
 import { reactive, ref, toRefs, onBeforeMount, onMounted } from 'vue'
-
+import Advance from '@/components/Home-components/Advance.vue';
+import type { RefSymbol } from '@vue/reactivity';
 
 //数据
 let modelimage = '/images/chatgpt35.jpeg'
-let input = ref('')
+let input = ref('');
+
+
+interface Message {
+    user: string;
+    bot: string;
+}
+
+let messagelist = reactive<Message[]>([
+])
+let advance = reactive({
+    image: '/images/chatgpt35 (2).png',
+    message: 'How can I help you today?'
+})
 //方法
 function cheakhistory() {
 
 }
 
+function sendtochatgpt() {
+    
+
+    messagelist.push({
+        user: input.value,
+        bot: '',
+    });
+
+    console.log(messagelist);
+
+
+    input.value = '';
+    messagelist[messagelist.length - 1].bot = '我已经作出回答';
+    console.log(messagelist);
+
+}
+function clearmessages() {
+
+}
 </script>
 
 <style scoped>
@@ -60,7 +112,7 @@ function cheakhistory() {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 90px;
+    height: 80px;
     background-color: #f3f5fc;
 }
 
@@ -77,7 +129,16 @@ function cheakhistory() {
     /* background-color: #e9eef3; */
     text-align: center;
     flex-grow: 1;
+    display: flex;
+    flex-direction: row;
 
+
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .cheakhistory-button {
@@ -98,12 +159,25 @@ function cheakhistory() {
 :deep(.el-textarea__inner::-webkit-scrollbar ){
   display: none; 
 } */
-:deep(.el-textarea__inner::-webkit-scrollbar) {
+.chatinput {
+    padding: 10px;
+}
+
+.area {
+    width: 600px;
+    height: 36px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+:deep(.area::-webkit-scrollbar) {
     width: 6px;
     height: 6px;
 }
 
-:deep(.el-textarea__inner::-webkit-scrollbar-thumb) {
+:deep(.area::-webkit-scrollbar-thumb) {
     border-radius: 3px;
     -moz-border-radius: 3px;
     /* For Firefox */
@@ -112,11 +186,11 @@ function cheakhistory() {
     background-color: #c3c3c3;
 }
 
-:deep(.el-textarea__inner::-webkit-scrollbar-track) {
+:deep(.area::-webkit-scrollbar-track) {
     background-color: transparent;
 }
-:deep(.el-textarea__inner) {
-  border: none;
-}
 
+:deep(.el-button--large) {
+    --el-button-size: 50px
+}
 </style>
