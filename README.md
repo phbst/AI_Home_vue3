@@ -5,6 +5,7 @@ This template should help get you started developing with Vue 3 in Vite.
 ![web demo](./githubshow/屏幕截图%202024-04-09%20233851.png)
 ![web demo](./githubshow/屏幕截图%202024-04-14%20161231.png)
 ![web demo](./githubshow/屏幕截图%202024-04-14%20161337.png)
+![web demo](./githubshow/屏幕截图%202024-04-14%20195319.png)
 
 ## Recommended IDE Setup
 
