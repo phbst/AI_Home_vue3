@@ -1,4 +1,4 @@
-# web
+# web项目还在开发中，不知道会不会继续更新了
 
 This template should help get you started developing with Vue 3 in Vite.
 
