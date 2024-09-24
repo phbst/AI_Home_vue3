@@ -1,5 +1,4 @@
-# web项目还在开发中，不知道会不会继续更新了
-
+# (停更)
 This template should help get you started developing with Vue 3 in Vite.
 
 ![web demo](./githubshow/屏幕截图%202024-04-09%20233851.png)
